@@ -22,6 +22,7 @@ export const useStage = (player, resetPlayer) => {
                     }
                 });
             });
+            // 
 
             return newStage;
         };
