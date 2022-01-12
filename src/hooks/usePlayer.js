@@ -10,6 +10,24 @@ export const usePlayer = () => {
         collided: false
     });
 
+    const rotate = (matrix, dir) => {
+        // Make the rows to become cols (transpose)
+        const rotatedTetro = matrix.map((_, index) => 
+            matrix.map(col => col[index]),
+        );
+        // Reverse each row to get a rotated matrix
+        if (dir > 0) return rotatedTetro.map(row => row.reverse());
+        return rotatedTetro.reverse();
+    };
+
+    const playerRotate = (state, direction) => {
+        // copying the player array so we don't mutate the state
+        const clonedPlayer = JSON.parse(JSON.stringify(player));
+        clonedPlayer.tetromino = rotate(clonedPlayer.tetromino, direction);
+
+        setPlayer(clonedPlayer);
+    }
+
     // the useState thingy above actually means 3 lines below:
     // const playerState = useState();
     // const player = playerState[0];
@@ -31,5 +49,5 @@ export const usePlayer = () => {
         })
     }, [])
 
-    return [player, updatePlayerPos, resetPlayer];
+    return [player, updatePlayerPos, resetPlayer, playerRotate];
 }
