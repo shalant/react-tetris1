@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-
 import { createStage, checkCollision } from '../gameHelpers';
-
 // Styled Components
 import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
 
 // Custon Hooks
+import { useInterval } from '../hooks/useInterval';
 import { usePlayer } from '../hooks/usePlayer';
 import { useStage } from '../hooks/useStage';
+import { useGameStatus } from '../hooks/useGameStatus';
 
 // Components
 import Stage from './Stage';
@@ -26,9 +26,8 @@ const Tetris = () => {
     const movePlayer = dir => {
         if(!checkCollision(player, stage, { x: dir, y: 0 })) {
             updatePlayerPos({ x: dir, y: 0 });
-
         }
-    }
+    };
 
     const startGame = () => {
         console.log('test')

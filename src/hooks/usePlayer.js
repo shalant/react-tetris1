@@ -13,8 +13,7 @@ export const usePlayer = () => {
     const rotate = (matrix, dir) => {
         // Make the rows to become cols (transpose)
         const rotatedTetro = matrix.map((_, index) => 
-            matrix.map(col => col[index]),
-        );
+            matrix.map(col => col[index]));
         // Reverse each row to get a rotated matrix
         if (dir > 0) return rotatedTetro.map(row => row.reverse());
         return rotatedTetro.reverse();
@@ -31,13 +30,12 @@ export const usePlayer = () => {
             // how we know how many steps to the sound we've gone
             clonedPlayer.pos.x += offset;
             offset = -(offset + (offset > 0 ? 1 : -1));
-            if (offset > clonedPlayer.tetromino[0].length){
+            if (offset > clonedPlayer.tetromino[0].length) {
                 rotate(clonedPlayer.tetromino, -dir);
                 clonedPlayer.pos.x = pos;
                 return;
             }
         }
-
         setPlayer(clonedPlayer);
     }
 
@@ -59,8 +57,8 @@ export const usePlayer = () => {
             pos: { x: STAGE_WIDTH / 2 - 2, y: 0 },
             tetromino: randomTetromino().shape,
             collided: false
-        })
-    }, [])
+        });
+    }, []);
 
     return [player, updatePlayerPos, resetPlayer, playerRotate];
 }
