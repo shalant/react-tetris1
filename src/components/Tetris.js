@@ -19,7 +19,7 @@ const Tetris = () => {
     const [gameOver, setGameOver] = useState(false);
 
     const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
-    const [stage, setStage] = useStage(player, resetPlayer);
+    const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
 
     console.log('re-render');
 
@@ -49,7 +49,6 @@ const Tetris = () => {
             }
             updatePlayerPos({ x: 0, y:0, collided: true })
         }
-
     }
 
     const dropPlayer = () => {
@@ -72,7 +71,7 @@ const Tetris = () => {
                 playerRotate(stage, 1)
             }
         }
-    }
+    };
 
     return (
         <StyledTetrisWrapper 
