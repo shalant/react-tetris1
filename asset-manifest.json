@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/react-tetris1/static/css/main.3ab74471.css",
+    "main.js": "/react-tetris1/static/js/main.0366989c.js",
+    "static/js/787.60f3467f.chunk.js": "/react-tetris1/static/js/787.60f3467f.chunk.js",
+    "static/media/bg.png": "/react-tetris1/static/media/bg.d63cfd51f1a63591fdd7.png",
+    "static/media/Pixel-LCD-7.woff": "/react-tetris1/static/media/Pixel-LCD-7.63d9c15192fdeab6d3a6.woff",
+    "index.html": "/react-tetris1/index.html",
+    "main.3ab74471.css.map": "/react-tetris1/static/css/main.3ab74471.css.map",
+    "main.0366989c.js.map": "/react-tetris1/static/js/main.0366989c.js.map",
+    "787.60f3467f.chunk.js.map": "/react-tetris1/static/js/787.60f3467f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ab74471.css",
+    "static/js/main.0366989c.js"
+  ]
+}
